@@ -48,7 +48,9 @@ def trainAgent(
                     env.agent.mastermind.turns
                 )
             )
+            env.render()
             observation, reward, terminated, _ = env.step(action)
+
         wins.append(reward == 1)
         if i % nGamesPerSave == 0:
             with open(savePath, "wb") as f:
